@@ -15,7 +15,11 @@ export class AuthService {
   constructor(private afAuth: AngularFireAuth) {
   }
 
-  createUserWithEmailAndPassword(account: Account) {
+  getAuthenticatedUser() {
+    return this.afAuth.authState;
+  }
+
+  async createUserWithEmailAndPassword(account: Account) {
     try {
       return <LoginResponse>{
         result: this.afAuth.auth.createUserWithEmailAndPassword(account.email, account.password)
@@ -28,7 +32,7 @@ export class AuthService {
     }
   }
 
-  signInWithEmailAndPassword(account: Account) {
+  async signInWithEmailAndPassword(account: Account) {
     try {
       return <LoginResponse>{
         result: this.afAuth.auth.signInWithEmailAndPassword(account.email, account.password)

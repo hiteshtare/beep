@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the ChannelsPage page.
+ * Generated class for the EditProfilePage page.
  *
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
@@ -10,11 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-channels',
-  templateUrl: 'channels.html',
+  selector: 'page-edit-profile',
+  templateUrl: 'edit-profile.html',
 })
-export class ChannelsPage {
+export class EditProfilePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+
+  saveProfileResult(event: boolean) {
+    event ? this.navCtrl.setRoot('TabsPage') : console.log('User not Authenicated or Save!');
+  }
+
 }

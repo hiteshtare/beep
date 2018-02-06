@@ -22,13 +22,13 @@ export class RegisterPage {
   register(event: LoginResponse) {
     if (!event.error) {
       this.toastCtrl.create({
-        message: 'Your Account has been created successfully.',
+        message: `Account created successfully : ${event.result.email}`,
         duration: 3000
       }).present();
     }
     else {
       this.toastCtrl.create({
-        message: `Unable to create account : ${event.error.message}`,
+        message: `Account not created : ${event.error.message}`,
         duration: 3000
       }).present();
     }

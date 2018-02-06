@@ -1,7 +1,7 @@
-import { User } from './../user/user.model';
+import { Profile } from "../profile/profile.model";
 
-export class Messages {
-    constructor(public user: User, public date: Date, public lastMessage: string) {
-
-    }
+export interface Messages {
+    profile: Profile;
+    date: Date;
+    lastMessage: string;
 }

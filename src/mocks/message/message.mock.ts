@@ -1,17 +1,12 @@
 import { Messages } from './../../models/messages/messages.model';
-import { USER_LIST } from './../user/user.mock';
+import { Profile_LIST } from '../profile/profile.mock';
 
-const userList = USER_LIST;
-
-// const messageList: Messages[] = [new Messages(userList[0], new Date()),
-// new Messages(userList[1], new Date()),
-// new Messages(userList[2], new Date()),
-// new Messages(userList[3], new Date())];
+const profileList = Profile_LIST;
 
 const messageList: Messages[] = [];
 
-userList.forEach((user) => {
-    messageList.push({ user: user, date: new Date(), lastMessage: 'Hello Folks.' })
+profileList.forEach((profile) => {
+    messageList.push({ profile: profile, date: new Date(), lastMessage: 'Hello Folks.' })
 });
 
 export const MESSAGE_LIST = messageList;
