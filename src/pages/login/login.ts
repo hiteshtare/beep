@@ -29,8 +29,6 @@ export class LoginPage {
         duration: 3000
       }).present();
 
-      console.log(<User>event.result);
-
       this.dataService.getProfile(<User>event.result).subscribe((profile) => {
         console.log(profile);
         profile.val() ? this.navCtrl.setRoot('TabsPage') : this.navCtrl.setRoot('EditProfilePage');

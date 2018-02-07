@@ -22,7 +22,7 @@ export class AuthService {
   async createUserWithEmailAndPassword(account: Account) {
     try {
       return <LoginResponse>{
-        result: this.afAuth.auth.createUserWithEmailAndPassword(account.email, account.password)
+        result: await this.afAuth.auth.createUserWithEmailAndPassword(account.email, account.password)
       }
     }
     catch (e) {
@@ -35,7 +35,7 @@ export class AuthService {
   async signInWithEmailAndPassword(account: Account) {
     try {
       return <LoginResponse>{
-        result: this.afAuth.auth.signInWithEmailAndPassword(account.email, account.password)
+        result: await this.afAuth.auth.signInWithEmailAndPassword(account.email, account.password)
       }
     }
     catch (e) {
